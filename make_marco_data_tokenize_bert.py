@@ -61,11 +61,13 @@ def compute_bm25(query,doc_stem):
 
 def load_marco_triples(path):
     toknieze = BertTokenizer.from_pretrained(bert_model)
-    with open(path, encoding='utf-8-sig') as f:
+    with open(path, encoding='utf-8-sig') as f,open('{}/triples.train.small_with_id.tsv'.format(marco_path),'w',encoding='utf-8-sig') as w:
+        writer = csv.writer(w, delimiter='\t')
         reader = csv.reader(f, delimiter="\t")
         score = []
         lines = [line for line in reader]
         count = 0
+        writer.writerow(['query', 'pos_doc', 'neg_doc', 'id'])
         for row in tqdm.tqdm(lines[1:]):
             count += 1
             query = row[0]
@@ -86,6 +88,8 @@ def load_marco_triples(path):
                     row_score_dist.append(bm25)
                     sentence = []
             score.append(row_score_dist)
+            writer.writerow([row[0],row[1],row[2],count])
+            count += 1
         joblib.dump(score,'{}/score_tok_128_lower_bert'.format(marco_path)) #list id->score_list
 
 
