@@ -47,7 +47,7 @@ nohup python3 -u ./drivers/run_warmup_reader_one_gpu_origin_model.py \
 
 ### Step 1. preprocess msmarco:
 ```
-sh ./cmds/preprocess_21
+sh ./cmds/preprocess_21.sh
 ```
 
 ### Step 2. Use the trained DPR model by BERM to initialize the retriever and generate the initial index
