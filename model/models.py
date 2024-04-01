@@ -222,6 +222,7 @@ class NLL_reader_one_hot_gelu_equal_cls(EmbeddingMixin_reader):
                 avg_vector = torch.div(sum_vector, max(1,now_juhao - last_juhao - 1))
                 last_juhao = now_juhao
                 avg_vetors = [avg_vector]
+<<<<<<< HEAD
         if train_step < 20000:
             weighted_div = 1.0
             weighted_equal = 1.0
@@ -246,6 +247,10 @@ class NLL_reader_one_hot_gelu_equal_cls(EmbeddingMixin_reader):
         else:
             weighted_div = 0.1
             weighted_equal = 1.0
+=======
+        weighted_div = 0.1
+        weighted_equal = 1.0
+>>>>>>> f2c2f4f9d6258c7d0596c526c530f485e3b909d7
         if train_step % 10000 == 0:
             print('train_step is {}'.format(train_step))
             print('weighted_div:{}'.format(weighted_div))

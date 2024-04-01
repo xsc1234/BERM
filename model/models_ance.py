@@ -21,6 +21,10 @@ import os
 device = "cuda"
 marco_path = ''
 dic_idf = joblib.load('{}/word_idf_tok_512'.format(marco_path))
+<<<<<<< HEAD
+=======
+## ANCE
+>>>>>>> f2c2f4f9d6258c7d0596c526c530f485e3b909d7
 # from transformers import DPRReader, DPRReaderTokenizer
 # tokenizer = DPRReaderTokenizer.from_pretrained("/data/home/xushicheng/reader_multi")
 # reader = DPRReader.from_pretrained("/data/home/xushicheng/reader_multi")
