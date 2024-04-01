@@ -1,3 +1,20 @@
+# BERM
+BERM: Training the Balanced and Extractable Representation for Matching to Improve Generalization Ability of Dense Retrieval (ACL 2023)
+
+Paper: https://arxiv.org/abs/2305.11052
+
+```
+@inproceedings{BERM,
+  author    = {Shicheng Xu and
+               Liang Pang and
+               Huawei Shen and
+               Xueqi Cheng},
+  title     = {BERM: Training the Balanced and Extractable Representation for Matching to Improve Generalization Ability of Dense Retrieval},
+  booktitle = {In Proceedings of the 2023 Conference on ACL},
+  year      = {2023},
+}
+```
+
 ## Train with DPR
 need about 300000 steps
 ```
@@ -69,21 +86,3 @@ nohup python -u run_ann_reader_one_gpu.py --model_type reader_one_hot_gelu_equal
 
 In the training process of Step 3, Step 2 should keep running (parallel). When Step 2 detects the new model got from Step 3, it will use the new model to generate the new index, and then Step 3 will use the new index to continue training.
 
-=======
-# BERM
-BERM: Training the Balanced and Extractable Representation for Matching to Improve Generalization Ability of Dense Retrieval (ACL 2023)
-
-Paper: https://arxiv.org/abs/2305.11052
-
-```
-@inproceedings{BERM,
-  author    = {Shicheng Xu and
-               Liang Pang and
-               Huawei Shen and
-               Xueqi Cheng},
-  title     = {BERM: Training the Balanced and Extractable Representation for Matching to Improve Generalization Ability of Dense Retrieval},
-  booktitle = {In Proceedings of the 2023 Conference on ACL},
-  year      = {2023},
-}
-```
->>>>>>> f2c2f4f9d6258c7d0596c526c530f485e3b909d7
