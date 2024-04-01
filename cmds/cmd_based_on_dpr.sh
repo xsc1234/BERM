@@ -1,0 +1,23 @@
+nohup python3 -u run_warmup_reader_one_gpu_origin_model.py \
+    --train_model_type reader_one_hot_gelu_equal_cls \
+    --model_name_or_path /data/xushicheng/roberta \ #path of roberta
+    --task_name MSMarco \
+    --do_train \
+    --evaluate_during_training \
+    --data_dir g/ir_dataset/msmarco/msmarco/raw_data \ #path of msmarco dataset
+    --max_seq_length 128 \ 
+    --per_gpu_eval_batch_size=256 \
+    --per_gpu_train_batch_size=32 \
+    --learning_rate 2e-5  \
+    --logging_steps 1000  \
+    --num_train_epochs 2.0  \
+    --output_dir /BERM/out/dpr_trained_by_berm \ # Path to save the model
+    --warmup_steps 1000  \
+    --overwrite_output_dir \
+    --save_steps 10000 \
+    --gradient_accumulation_steps 1 \
+    --expected_train_size 35000000 \
+    --logging_steps_per_eval 10000000 \
+    --fp16 \
+    --optimizer lamb \
+    --log_dir ../log/tensorboard/dpr > /dpr_trained_by_berm_log 2>&1 &
