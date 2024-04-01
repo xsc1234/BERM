@@ -65,7 +65,7 @@ nohup python -m torch.distributed.launch --nproc_per_node=2 ./drivers/run_ann_da
 ### Step 3. After the initial index is generated, start to train the model with BERM
 
 ```
-nohup python -u run_ann_reader_one_gpu.py --model_type reader_one_hot_gelu_equal_cls_add_bm25 \
+nohup python -u ./drivers/run_ann_reader_one_gpu.py --model_type reader_one_hot_gelu_equal_cls_add_bm25 \
 --model_name_or_path # Initialized retriever, such as the DPR provided by BEIR, or DPR trained by BERM \
 --task_name MSMarco \
 --triplet \
